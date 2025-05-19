@@ -18,7 +18,6 @@ app.use(express.json());
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the Express backend!' });
 });
-app.use('/api/users', userRoutes);
 
 // Start server
 app.listen(port, () => {
