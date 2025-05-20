@@ -3,7 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import connectDB from './utils/connectDB.js';
+
 import userRoutes from './routes/userRoutes.js';
+import groupRoutes from './routes/groupRoutes.js';
 
 dotenv.config();
 
@@ -17,11 +19,8 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
-
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello from RentSync!' });
-});
 app.use('/api/users', userRoutes);
+app.use('/api/groups', groupRoutes);
 
 // Start server
 app.listen(port, () => {
