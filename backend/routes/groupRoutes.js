@@ -18,10 +18,10 @@ router.post('/', auth, createGroup);
 router.get('/', auth, getUserGroups);
 router.get('/:identifier', auth, getGroup);
 router.put('/:identifier', auth, updateGroup);
-router.delete('/:identifier', auth, deleteGroup);
-router.post('/:identifier/join', auth, requestToJoinGroup);
-router.post('/:identifier/approve', auth, approveJoinRequest);
-router.post('/:identifier/reject', auth, rejectJoinRequest);
+router.delete('/:id', auth, deleteGroup);
+router.post('/:id/request', auth, requestToJoinGroup);
+router.post('/:groupId/requests/:userId/approve', auth, approveJoinRequest);
+router.delete('/:groupId/requests/:userId/reject', auth, rejectJoinRequest);
 router.post('/:identifier/leave', auth, leaveGroup);
 
 export default router;
