@@ -32,3 +32,5 @@ const inspectionSchema = new mongoose.Schema({
         default: Date.now 
     },
 });
+
+export default mongoose.model("Inspection", inspectionSchema);

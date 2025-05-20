@@ -6,6 +6,7 @@ import connectDB from './utils/connectDB.js';
 
 import userRoutes from './routes/userRoutes.js';
 import groupRoutes from './routes/groupRoutes.js';
+import inspectionRoutes from './routes/inspectionRoutes.js';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 app.use('/api/users', userRoutes);
 app.use('/api/groups', groupRoutes);
+app.use('/api/inspections', inspectionRoutes);
 
 // Start server
 app.listen(port, () => {
